@@ -7,6 +7,8 @@ import uvicorn
 from database import get_db_connection
 from models import Item, Cases
 
+print("Запуск сервера...")
+
 app = FastAPI()
 
 app.add_middleware(
