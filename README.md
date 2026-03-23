@@ -20,4 +20,4 @@
    .venv\Scripts\activate
 2. Запустить сервер:
     uvicorn main:app --reload
-Автор: Matvey Kupriyanov (7 класс)
+3. Автор: Matvey Kupriyanov (7 класс)
