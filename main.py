@@ -137,4 +137,16 @@ def delete_case(case_id: int):
     return {"status": "success"}
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    import uvicorn
+    
+    ssl_key = "/etc/letsencrypt/live/phone-shop.contrainer.ru/privkey.pem"
+    ssl_cert = "/etc/letsencrypt/live/phone-shop.contrainer.ru/fullchain.pem"
+
+    print("Запуск защищенного HTTPS сервера...")
+    uvicorn.run(
+        "main:app", 
+        host="0.0.0.0", 
+        port=443,
+        ssl_keyfile=ssl_key,
+        ssl_certfile=ssl_cert
+    )
